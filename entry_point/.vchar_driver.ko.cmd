@@ -1,0 +1,1 @@
+cmd_/home/son/Documents/Device_Driver/entry_point/vchar_driver.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/son/Documents/Device_Driver/entry_point/vchar_driver.ko /home/son/Documents/Device_Driver/entry_point/vchar_driver.o /home/son/Documents/Device_Driver/entry_point/vchar_driver.mod.o;  true

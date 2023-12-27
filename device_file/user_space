@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define DEVICE_FILE "/dev/vchar_dev"
+
+int main() {
+    int file_desc;
+    int ret;
+
+    // Mở character device
+    file_desc = open(DEVICE_FILE, O_RDWR);
+    if (file_desc < 0) {
+        perror("Failed to open the device.");
+        return errno;
+    }
+
+    // Ghi dữ liệu vào character device
+    char write_buffer[] = "Hello from user space!";
+    ret = write(file_desc, write_buffer, sizeof(write_buffer));
+    if (ret < 0) {
+        perror("Failed to write to the device.");
+        return errno;
+    }
+
+    // Đọc dữ liệu từ character device
+    char read_buffer[100];
+    ret = read(file_desc, read_buffer, sizeof(read_buffer));
+    if (ret < 0) {
+        perror("Failed to read from the device.");
+        return errno;
+    }
+
+    printf("Data read from the device: %s\n", read_buffer);
+
+    // Đóng character device
+    close(file_desc);
+
+    return 0;
+}
+

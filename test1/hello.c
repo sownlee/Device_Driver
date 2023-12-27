@@ -2,7 +2,7 @@
 * hello.c - vi du ve linux kernel module
 */
 #include <linux/module.h> /* thu vien nay dinh nghia cac macro nhu module_init va module_exit */
-#define DRIVER_AUTHOR "Nguyen Tien Dat <dat.a3cbq91@gmail.com>"
+#define DRIVER_AUTHOR "Son Giang <giangsondh74@gmail.com>"
 #define DRIVER_DESC "A sample loadable kernel module"
 static int __init init_hello(void)
 {

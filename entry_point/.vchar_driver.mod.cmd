@@ -1,0 +1,1 @@
+cmd_/home/son/Documents/Device_Driver/entry_point/vchar_driver.mod := { echo  /home/son/Documents/Device_Driver/entry_point/vchar_driver.o;  echo; } > /home/son/Documents/Device_Driver/entry_point/vchar_driver.mod

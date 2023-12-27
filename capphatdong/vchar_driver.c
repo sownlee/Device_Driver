@@ -6,7 +6,7 @@
 #include <linux/fs.h>
 #define DRIVER_AUTHOR "Son Giang <giangsondh@gmail.com>"
 #define DRIVER_DESC "A sample character device driver"
-#define DRIVER_VERSION "0.2"
+#define DRIVER_VERSION "0.3"
 /****************************** device specific - START *****************************/
 struct __vchar_drv {
     dev_t dev_num;
@@ -39,6 +39,10 @@ static int __init vchar_driver_init(void)
         goto failed_register_devnum;
     }
     /* tao device file */
+    /* cap phat bo nho cho cac cau truc du lieu cua driver va khoi tao */
+    /* khoi tao thiet bi vat ly */
+    /* dang ky cac entry point voi kernel */
+    /* dang ky ham xu ly ngat */
     printk("Initialize vchar driver successfully\n");
     return 0;
 
@@ -50,6 +54,10 @@ static void __exit vchar_driver_exit(void)
 {
     //	struct vchar_drv *drv = &vchar_drv;
 
+    /* huy dang ky xu ly ngat */
+    /* huy dang ky entry point voi kernel */
+    /* giai phong thiet bi vat ly */
+    /* giai phong bo nho da cap phat cau truc du lieu cua driver */
     /* xoa bo device file */
     /* giai phong device number */
 //	unregister_chrdev_region(drv->dev_num, 1);	

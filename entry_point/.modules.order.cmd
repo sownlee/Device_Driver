@@ -1,0 +1,1 @@
+cmd_/home/son/Documents/Device_Driver/entry_point/modules.order := {   echo /home/son/Documents/Device_Driver/entry_point/vchar_driver.ko; :; } | awk '!x[$$0]++' - > /home/son/Documents/Device_Driver/entry_point/modules.order
